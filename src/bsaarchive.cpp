@@ -36,7 +36,7 @@ Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301  USA
 #include <lz4frame.h>
 #include <sys/stat.h>
 #define WIN32_LEAN_AND_MEAN
-#include <Windows.h>
+//#include <Windows.h>
 
 using std::fstream;
 
@@ -1013,12 +1013,13 @@ void Archive::extractFiles(const std::string &targetDirectory,
 
 void Archive::createFolders(const std::string &targetDirectory, Folder::Ptr folder)
 {
-  for (std::vector<Folder::Ptr>::iterator iter = folder->m_SubFolders.begin();
-       iter != folder->m_SubFolders.end(); ++iter) {
-    std::string subDirName = targetDirectory + "\\" + (*iter)->getName();
-    ::CreateDirectoryA(subDirName.c_str(), nullptr);
-    createFolders(subDirName, *iter);
-  }
+//  for (std::vector<Folder::Ptr>::iterator iter = folder->m_SubFolders.begin();
+//       iter != folder->m_SubFolders.end(); ++iter) {
+//    std::string subDirName = targetDirectory + "\\" + (*iter)->getName();
+//    ::CreateDirectoryA(subDirName.c_str(), nullptr);
+//    createFolders(subDirName, *iter);
+//  }
+  std::cerr << "FIXME: Not implemented" + std::string(" \e]8;;eclsrc://") + __FILE__ + ":" + std::to_string(__LINE__) + "\a" + __FILE__ + ":" + std::to_string(__LINE__) + "\e]8;;\a\n"; assert(false && "Not implemented");
 }
 
 
